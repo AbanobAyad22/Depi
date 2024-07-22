@@ -1,0 +1,23 @@
+CREATE TABLE `MOE_ITEM_T` (
+  `ITEM_NAME` varchar(50) NOT NULL,
+  `ITEM_DESC` varchar(100) NOT NULL,
+  `ITEM_ONHAND` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+-------------------   
+
+
+INSERT INTO `MOE_ITEM_T` (`ITEM_NAME`, `ITEM_DESC`, `ITEM_ONHAND`) VALUES
+('TEST-ITEM-1', 'TEST-ITEM-DESC-1', 10),
+('TEST-ITEM-2', 'TEST-ITEM-DESC-2', 20);
+COMMIT;
+
+--------------------
+mysql --host=localhost --user=moeuser --password=moepass 
+show databases;
+use moe_db;
+show tables;
+select * from MOE_ITEM_T;
