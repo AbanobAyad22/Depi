@@ -1,0 +1,43 @@
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7
+    network_mode: bridge
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=abanoub
+      - MYSQL_PASSWORD=abanoub 
+      - MYSQL_DATABASE=mydb
+    container_name: abanoub
+
+
+
+    # -------------------------
+
+
+# # 
+# mysql --host=localhost --user=abanoub --password=abanoub mydb
+# ----
+# SHOW DATABASES;
+# ----
+# use mydb;
+# ----
+# CREATE TABLE `abanoub` (
+#   `ITEM_NAME` varchar(50) NOT NULL,
+#   `ITEM_DESC` varchar(100) NOT NULL,
+#   `ITEM_ONHAND` int(5) NOT NULL
+# ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+# -------
+# show tables;
+# ------
+# INSERT INTO `abanoub` (`ITEM_NAME`, `ITEM_DESC`, `ITEM_ONHAND`) VALUES
+# ('TEST-ITEM-1', 'TEST-ITEM-DESC-1', 10),
+# ('TEST-ITEM-2', 'TEST-ITEM-DESC-2', 20);
+# COMMIT;
+# -----
+# select * from abanoub;
+
+
+# ---------------------------------------
+# docker run -it   -e MYSQL_USER=abanoub -e MYSQL_PASSWORD=abanoub -e MYSQL_ROOT_PASSWORD=root mysql
+
