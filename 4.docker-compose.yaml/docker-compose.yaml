@@ -1,0 +1,21 @@
+version: '3'
+services:
+  frontend: 
+    image: nginx
+    # build: .
+    container_name: nginx
+    volumes:
+      - /depi/:/usr/share/nginx/html
+    ports:
+      - 8086:80
+    # networks: 
+    #   depi: 
+    #     ipv4_address: 192.100.0.5
+    network_mode: bridge
+
+# networks:
+#   depi:
+#     ipam:
+#       driver: default
+#       config:
+#         - subnet: "192.100.0.0/24"
