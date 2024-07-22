@@ -1,0 +1,31 @@
+# FROM ubuntu
+# CMD [ "echo","hello" ]
+
+# docker run cm-en
+# # ----------------
+# FROM ubuntu
+# CMD [ "echo","hello" ]   
+
+# # docker run -it cm-en echo " good morning" 
+# # ---------------------
+# FROM ubuntu
+# ENTRYPOINT [ "echo","hello" ]
+    
+# # docker run -it cm-en
+# # -----------------
+# FROM ubuntu
+# ENTRYPOINT [ "echo","hello" ]
+        
+# # # docker run -it  cm-en  echo " good morning" 
+# # -----------------------
+# FROM ubuntu
+# ENTRYPOINT [ "echo","hello" ]
+# CMD [ "echo","hello cmd" ]   
+
+# # # # docker run -it  cm-en   
+# -------------------
+FROM ubuntu
+ENTRYPOINT [ "sleep" ]
+CMD [ "5" ]          
+
+# # # # docker run -it  cm-en  "welcome" 
