@@ -1,0 +1,131 @@
+# docker run -e MYSQL_ROOT_PASSWORD=root mysql
+# version: "3"
+# services:
+#   mysql:
+#     image: mysql
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root    
+
+# --------------------
+# docker run --name abanoub -e MYSQL_ROOT_PASSWORD=root mysql
+# version: "3"
+# services:
+#   mysql:
+#     image: mysql:5.7
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root  
+#     container_name: abanoub  
+# -----------------------
+# docker run --name abanoub -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=abanoub -e MYSQL_PASSWORD=abanoub -e MYSQL_DATABASE=mydb1 mysql
+# version: "3"
+# services:
+#   mysql:
+#     image: mysql
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root
+#       - MYSQL_USER=abanoub
+#       - MYSQL_PASSWORD=abanoub 
+#       - MYSQL_DATABASE=mydb1
+#     container_name: abanoub
+# ------------------
+# docker network create depi
+# docker run --name abanoub --network depi -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=abanoub -e MYSQL_PASSWORD=abanoub -e MYSQL_DATABASE=mydb1 mysql
+# version: "3"
+# services:
+#   mysql:
+#     image: mysql:5.7
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root
+#       - MYSQL_USER=abanoub
+#       - MYSQL_PASSWORD=abanoub 
+#       - MYSQL_DATABASE=mydb1
+#     container_name: abanoub
+#     networks:
+#       - depiii
+# networks:
+#   depiii:
+#     driver: bridge
+# -------------
+# docker volume create db
+#  docker network create de
+# docker run --name abanoub --network de -v db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=abanoub -e MYSQL_PASSWORD=abanoub -e MYSQL_DATABASE=mydb1 mysql
+# version: "3"
+# services:
+#   mysql:
+#     image: mysql:5.7
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root
+#       - MYSQL_USER=abanoub
+#       - MYSQL_PASSWORD=abanoub 
+#       - MYSQL_DATABASE=mydb1
+#     container_name: abanoub
+#     networks:
+#       - de
+#     volumes:
+#       - db:/var/run/mysqld
+# networks:
+#   de:
+#     driver: bridge
+# volumes:
+#   db:
+# -------------------------------
+# docker volume creat db
+#  docker network create de
+# docker run --name abanoub --network de -p 6060:3306 -v db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=abanoub -e MYSQL_PASSWORD=abanoub -e MYSQL_DATABASE=mydb1 mysql
+version: "3"
+# services:
+#   mysql:
+#     image: mysql:5.7
+#     environment:
+#       - MYSQL_ROOT_PASSWORD=root
+#       - MYSQL_USER=abanoub
+#       - MYSQL_PASSWORD=abanoub 
+#       - MYSQL_DATABASE=mydb1
+#     container_name: abanoub
+#     networks:
+#       - de
+#     volumes:
+#       - db:/var/run/mysqld
+#     ports:
+#       - "6060:3306"  
+# networks:
+#   de:
+#     driver: bridge
+# volumes:
+#   db:
+# ------------------
+# /var/lib/mysql
+# ----------------------
+
+
+    # -------------------------
+
+
+# # 
+# mysql --host=localhost --user=abanoub --password=abanoub mydb
+#  mysql --user=root --password=root
+# ----
+# SHOW DATABASES;
+# ----
+# use mydb;
+# ----
+# CREATE DATABASE MYDB10;
+# -----
+# CREATE TABLE `abanoub` (
+#   `ITEM_NAME` varchar(50) NOT NULL,
+#   `ITEM_DESC` varchar(100) NOT NULL,
+#   `ITEM_ONHAND` int(5) NOT NULL
+# ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+# -------
+# show tables;
+# ------
+# INSERT INTO `abanoub` (`ITEM_NAME`, `ITEM_DESC`, `ITEM_ONHAND`) VALUES
+# ('TEST-ITEM-1', 'TEST-ITEM-DESC-1', 10),
+# ('TEST-ITEM-2', 'TEST-ITEM-DESC-2', 20);
+# COMMIT;
+# -----
+# select * from abanoub;
+
+
+# ---------------------------------------
+# docker run -it   -e MYSQL_USER=abanoub -e MYSQL_PASSWORD=abanoub -e MYSQL_ROOT_PASSWORD=root mysql
