@@ -1,0 +1,49 @@
+FROM ubuntu
+# ------
+# COPY fun1.sh .
+# ------
+# RUN mkdir dir1
+# COPY fun1.sh /dir1
+# ----
+# RUN mkdir dir1
+# WORKDIR /dir1
+# COPY fun1.sh /dir1
+# ------
+# RUN mkdir dir1
+# WORKDIR /dir1
+# COPY fun1.sh .
+# ----------
+# RUN mkdir dir1
+# WORKDIR /dir1
+# COPY fun1.sh fun2.sh /dir1/
+# --------------
+# RUN mkdir dir1
+# WORKDIR /dir1
+# COPY directory/ .
+# ----------------
+# ----------------    
+# RUN mkdir dir1
+# WORKDIR /dir1
+# ADD ./directory .
+# ------
+# gzip fun1.sh
+# tar -cvf fun1.sh.tar.gz fun1.sh.gz 
+
+# ADD   fun1.sh.tar.gz .  
+
+
+# --------------
+# --------------    
+# RUN mkdir dir1
+# WORKDIR /dir1
+# ADD https://github.com/barchart/marketdata-api-js.git /dir1/
+# -------------
+# RUN mkdir dir1
+# WORKDIR /dir1
+# RUN useradd abanoub
+# ADD --chown=abanoub:root https://github.com/barchart/marketdata-api-js.git /dir1/    
+# -----------
+# RUN mkdir dir1
+# WORKDIR /dir1
+# RUN useradd abanoub
+# COPY --chown=abanoub:root fun1.sh /dir1/       
